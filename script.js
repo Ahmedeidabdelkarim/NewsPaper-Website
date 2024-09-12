@@ -1,12 +1,12 @@
 import { apikey } from "./api";
 // Add any interactive behavior you need here// Add any interactive behavior you need here
 document.querySelector('.view-more').addEventListener('click', () => {
-    fetchArticles();
+    fetchArticles(apikey);
   });
   
   // Fetch articles from the API
-  function fetchArticles() {
-    fetch(`https://newsapi.org/v2/everything?q=tesla&from=2024-08-12&sortBy=publishedAt&apiKey=${apikey}`)
+  function fetchArticles(api) {
+    fetch(`https://newsapi.org/v2/everything?q=tesla&from=2024-08-12&sortBy=publishedAt&apiKey=${api}`)
       .then(response => response.json())
       .then(data => {
 
@@ -46,4 +46,4 @@ document.querySelector('.view-more').addEventListener('click', () => {
   }
   
   // Call the fetchArticles function initially to load the first set of articles
-  fetchArticles();
+  fetchArticles(apikey);
