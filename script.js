@@ -1,4 +1,4 @@
-
+import { apikey } from "./api";
 // Add any interactive behavior you need here// Add any interactive behavior you need here
 document.querySelector('.view-more').addEventListener('click', () => {
     fetchArticles();
@@ -6,7 +6,7 @@ document.querySelector('.view-more').addEventListener('click', () => {
   
   // Fetch articles from the API
   function fetchArticles() {
-    fetch('https://newsapi.org/v2/everything?q=tesla&from=2024-08-12&sortBy=publishedAt&apiKey=8efe399a2f494263a4ab3753a894d650')
+    fetch(`https://newsapi.org/v2/everything?q=tesla&from=2024-08-12&sortBy=publishedAt&apiKey=${apikey}`)
       .then(response => response.json())
       .then(data => {
 

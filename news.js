@@ -1,6 +1,6 @@
-
+import { apikey } from "./api.js";
 function fetchArticles() {
-    fetch('https://newsapi.org/v2/everything?q=tesla&from=2024-08-12&sortBy=publishedAt&apiKey=8efe399a2f494263a4ab3753a894d650')
+    fetch(`https://newsapi.org/v2/everything?q=tesla&from=2024-08-12&sortBy=publishedAt&apiKey=${apikey}`)
       .then(response => response.json())
       .then(data => {
         const newsGrid = document.querySelector('.container');
